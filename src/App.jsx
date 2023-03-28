@@ -1,7 +1,6 @@
 import PokemonCards from './components/PokemonCards/PokemonCards'
 import './App.css'
 
-
 const pokemonList = [
   {
     name: "bulbasaur",
@@ -11,8 +10,15 @@ const pokemonList = [
   {
     name: "mew",
   },
+  {
+    name: "Salameche",
+    imgSrc: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/004.png",
+  },
+  {
+    name: "Carapuce",
+    imgSrc: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/007.png",
+  },
 ];
-
 
 function App() {
   return (
