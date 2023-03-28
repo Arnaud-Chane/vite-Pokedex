@@ -1,6 +1,5 @@
 import './App.css'
 import PokemonCards from './components/PokemonCards/PokemonCards'
-import ButtonNextPrevious from './components/ButtonNextPrevious/ButtonNextPrevious'
 import Navbar from './components/Navbar/Navbar'
 import {useState, useEffect} from 'react'
 
@@ -32,8 +31,6 @@ const pokemonList = [
   },
 ];
 
-
-
 function App() {
 
   // Callback to retrieve index from PokemonCards
@@ -48,30 +45,11 @@ function App() {
   }
   // End
 
-  // Callback to retrieve inputValue from Navbar
-  let [inputValue, setInputValue] = useState("");
-  const callbackInputValue = (inputFromNavbar) => {
-    setInputValue(inputValue = inputFromNavbar);
-    return (
-      <div>
-        {inputFromNavbar}
-      </div>
-    )
-  }
-  // End
-
-
-
-
-  // useEffect(() => { 
-  //   alert("hello pokemon trainer :)")
-  // }, [])
 
   return (
     <div className="App">
-      <Navbar handleCallBack={callbackInputValue}/>
       <PokemonCards pokemon={pokemonList[indexCount]}/>
-      <ButtonNextPrevious handleCallBack={callbackIndex} pkmListLimit={pokemonList.length}/>
+      <Navbar handleCallBack={callbackIndex} pkmListLimit={pokemonList.length}/>
     </div>
   )
 }
