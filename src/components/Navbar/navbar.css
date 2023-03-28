@@ -1,0 +1,14 @@
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#inputNavbar{
+  height: 50px;
+  width: 500px;
+}
+
+.child-to-parent{
+  display: none;
+}

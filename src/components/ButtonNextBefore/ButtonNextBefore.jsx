@@ -21,7 +21,7 @@ const ButtonNextBefore = (props) => {
   return(
     <div className="btn-next-bfr-ctn">
       {index > 0 && 
-      <button onClick={handleClickBefore}> Before </button>}
+      <button onClick={handleClickBefore}> Previous </button>}
 
       {index < props.pkmListLimit - 1 &&
       <button onClick={handleClickNext}> Next </button>}
@@ -30,6 +30,7 @@ const ButtonNextBefore = (props) => {
       <div className="child-to-parent">
         {props.handleCallBack(index)}
       </div>
+      {/* End */}
     </div>
   );
 }

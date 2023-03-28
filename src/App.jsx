@@ -1,7 +1,8 @@
 import './App.css'
 import PokemonCards from './components/PokemonCards/PokemonCards'
 import ButtonNextBefore from './components/ButtonNextBefore/ButtonNextBefore'
-import {useState} from 'react'
+import Navbar from './components/Navbar/Navbar'
+import {useState, useEffect} from 'react'
 
 
 const pokemonList = [
@@ -27,29 +28,55 @@ const pokemonList = [
   },
   {
     name: "mew",
+    imgSrc: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/151.png",
   },
 ];
 
 
 
 function App() {
+
+  // Callback to retrieve index from PokemonCards
   let [indexCount, setIndexCount] = useState(0);
-  function Callback(indexFromBtn) {
-
+  const callbackIndex = (indexFromBtn) => {
     setIndexCount(indexCount = indexFromBtn);
-
     return (
       <div>
         {indexFromBtn}
       </div>
     )
   }
+  // End
+
+  // Callback to retrieve inputValue from Navbar
+  let [inputValue, setInputValue] = useState("");
+  const callbackInputValue = (inputFromNavbar) => {
+    setInputValue(inputValue = inputFromNavbar);
+    console.log(inputValue);
+    if(inputValue == "pikachu"){
+      alert("Pika Pikachu !!!");
+    } else {
+      return (
+        <div>
+          {inputFromNavbar}
+        </div>
+      )
+    }
+  }
+  // End
+
+
+
+
+  // useEffect(() => { 
+  //   alert("hello pokemon trainer :)")
+  // }, [])
 
   return (
     <div className="App">
+      <Navbar handleCallBack={callbackInputValue}/>
       <PokemonCards pokemon={pokemonList[indexCount]}/>
-      {/* <PokemonCards pokemon={pokemonList[0]}/> */}
-      <ButtonNextBefore handleCallBack={Callback} pkmListLimit={pokemonList.length}/>
+      <ButtonNextBefore handleCallBack={callbackIndex} pkmListLimit={pokemonList.length}/>
     </div>
   )
 }
