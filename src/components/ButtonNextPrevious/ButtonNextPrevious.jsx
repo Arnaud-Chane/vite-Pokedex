@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import ReactDOM from 'react-dom'
 import "./button.css"
 
-const ButtonNextBefore = (props) => {
+const ButtonNextPrevious = (props) => {
 
   const [index, setIndex] = useState(0);
 
@@ -35,4 +35,4 @@ const ButtonNextBefore = (props) => {
   );
 }
 
-export default ButtonNextBefore;
+export default ButtonNextPrevious;

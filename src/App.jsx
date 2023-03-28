@@ -1,6 +1,6 @@
 import './App.css'
 import PokemonCards from './components/PokemonCards/PokemonCards'
-import ButtonNextBefore from './components/ButtonNextBefore/ButtonNextBefore'
+import ButtonNextPrevious from './components/ButtonNextPrevious/ButtonNextPrevious'
 import Navbar from './components/Navbar/Navbar'
 import {useState, useEffect} from 'react'
 
@@ -52,16 +52,11 @@ function App() {
   let [inputValue, setInputValue] = useState("");
   const callbackInputValue = (inputFromNavbar) => {
     setInputValue(inputValue = inputFromNavbar);
-    console.log(inputValue);
-    if(inputValue == "pikachu"){
-      alert("Pika Pikachu !!!");
-    } else {
-      return (
-        <div>
-          {inputFromNavbar}
-        </div>
-      )
-    }
+    return (
+      <div>
+        {inputFromNavbar}
+      </div>
+    )
   }
   // End
 
@@ -76,7 +71,7 @@ function App() {
     <div className="App">
       <Navbar handleCallBack={callbackInputValue}/>
       <PokemonCards pokemon={pokemonList[indexCount]}/>
-      <ButtonNextBefore handleCallBack={callbackIndex} pkmListLimit={pokemonList.length}/>
+      <ButtonNextPrevious handleCallBack={callbackIndex} pkmListLimit={pokemonList.length}/>
     </div>
   )
 }
